@@ -36,17 +36,27 @@ http://192.168.0.10:8000/
 
 ## Versionar no GitHub
 
-1. Crie um repositório no GitHub.
+1. Se ainda não tiver, crie um repositório no GitHub.
 2. No terminal:
 
 ```bash
 git add .
-git commit -m "Adicionar calculadora Django e arquivo de configuração"
-git remote add origin https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+git commit -m "Adicionar calculadora Django e configuração"
+```
+
+3. Configure o `origin` caso ainda não tenha feito:
+
+```bash
+git remote add origin https://github.com/gcsamuel/calculadora.git
+```
+
+4. Envie para o GitHub:
+
+```bash
 git push -u origin master
 ```
 
-3. Depois, para atualizar:
+5. Depois, para atualizar:
 
 ```bash
 git add .
