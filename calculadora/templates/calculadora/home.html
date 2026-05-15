@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Django</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
         };
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .fade-in {
             animation: fadeIn 0.4s ease-out forwards;
@@ -118,13 +118,13 @@
         function setTheme(mode) {
             if (mode === 'dark') {
                 root.classList.add('dark');
-                themeIcon.textContent = '☀️';
-                themeLabel.textContent = 'Modo Claro';
+                if (themeIcon) themeIcon.textContent = '☀️';
+                if (themeLabel) themeLabel.textContent = 'Modo Claro';
                 localStorage.setItem('theme', 'dark');
             } else {
                 root.classList.remove('dark');
-                themeIcon.textContent = '🌙';
-                themeLabel.textContent = 'Modo Escuro';
+                if (themeIcon) themeIcon.textContent = '🌙';
+                if (themeLabel) themeLabel.textContent = 'Modo Escuro';
                 localStorage.setItem('theme', 'light');
             }
         }
@@ -133,15 +133,17 @@
             setTheme(root.classList.contains('dark') ? 'light' : 'dark');
         }
 
-        themeToggle.addEventListener('click', toggleTheme);
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
 
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            setTheme(savedTheme);
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setTheme('dark');
-        } else {
-            setTheme('light');
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                setTheme('dark');
+            } else {
+                setTheme('light');
+            }
         }
     </script>
 </body>
