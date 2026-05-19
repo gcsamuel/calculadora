@@ -102,13 +102,20 @@ cd calculadora
 ## PASSO 5: Criar Ambiente Virtual (1 minuto)
 
 ```bash
+# ⚠️ NOTA: Se encontrar erro com Python 3.11, use Python 3.10 (mais estável no PythonAnywhere)
 # Criar venv (isso também ativa)
-mkvirtualenv --python=/usr/bin/python3.11 calculadora
+mkvirtualenv --python=/usr/bin/python3.10 calculadora
 
 # Pronto! Você verá: (calculadora) ...
 ```
 
 ✅ **Verificação**: Prompt deve mostrar `(calculadora)` no início
+
+⚠️ **Se falhar**, tente descobrir versões disponíveis:
+```bash
+ls /usr/bin/python*
+```
+E use a versão que aparecer (3.9, 3.10 ou 3.12)
 
 ---
 
