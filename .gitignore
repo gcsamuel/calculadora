@@ -13,3 +13,18 @@ coverage.xml
 htmlcov/
 /staticfiles/
 .env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build files
+build/
+dist/
+*.egg-info/
+
+# Docker
+docker-compose.override.yml
